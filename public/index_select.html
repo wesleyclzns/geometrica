@@ -27,6 +27,21 @@
         style: 'mapbox://styles/geometrica/ckwp0hs8j0gsh14lszczbtepf' // replace this with your style URL
         });
 
+        map.on('load', () => {
+        // the rest of the code will go in here
+
+        
+        map.on('mousemove', (event) => {
+            const states = map.queryRenderedFeatures(event.point, {
+            layers: ['centro','leste-1','norte-1', 'norte-2']
+        });
+        document.getElementById('pd').innerHTML = states.length
+            ? `<h3>${states[0].properties.name}</h3><p><strong><em>${states[0].properties.density}</strong> people per square mile</em></p>`
+            : `<p>Hover over a state!</p>`;
+        });
+
+
+    });
     </script>
 </body>
 </html>
