@@ -36,16 +36,16 @@ body { margin: 0; padding: 0; }
                     antialias: true
                 });
  
-// Add zoom and rotation controls to the map.
-map.addControl(new mapboxgl.NavigationControl());
+    // Add zoom and rotation controls to the map.
+    map.addControl(new mapboxgl.NavigationControl());
 
-// Add the control to the map.
-map.addControl(
-new MapboxGeocoder({
-accessToken: mapboxgl.accessToken,
-mapboxgl: mapboxgl
-})
-);
+    // Add the control to the map.
+    map.addControl(
+        new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl
+        })
+    );
 </script>
  
 </body>
