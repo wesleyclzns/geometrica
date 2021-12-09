@@ -15,7 +15,7 @@
 <body>
     <div id='map'></div>
 
-    <div class='map-overlay' id='features'><h2>US population density</h2><div id='pd'><p>Hover over a state!</p></div></div>
+    <div class='map-overlay' id='features'><h2>Setor Quadra Lote</h2><div id='pd'><p>Passe o Mouse em um lote!</p></div></div>
 
     <div class='map-overlay' id='legend'></div>
 
@@ -36,8 +36,12 @@
             layers: ['centro','leste-1','norte-1', 'norte-2']
         });
         document.getElementById('pd').innerHTML = states.length
-            ? `<h3>${states[0].properties.name}</h3><p><strong><em>${states[0].properties.density}</strong> people per square mile</em></p>`
-            : `<p>Hover over a state!</p>`;
+            ? `<p><strong><em>${states[0].properties.lo_setor}</strong> Setor</em></p>
+            <p><strong><em>${states[0].properties.lo_quadra}</strong> Quadra</em></p>
+            <p><strong><em>${states[0].properties.lo_lote}</strong> Lote</em></p>`
+
+            
+            : `<p>Passe o mouse sobre um lote</p>`; //Pega o lote e setor e quadra
         });
 
 
