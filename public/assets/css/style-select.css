@@ -37,19 +37,19 @@ body {
     right: 0;
     background: #fff;
     margin-right: 20px;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     overflow: auto;
     border-radius: 3px;
   }
   
-  #features {
+  #box-sql {
     top: 0;
     height: 130px;
     margin-top: 20px;
     width: 250px;
   }
   
-  #features-2 {
+  #box-legislação {
     top: 150px;
     height: 130px;
     margin-top: 20px;
