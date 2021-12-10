@@ -37,7 +37,7 @@
         
         map.on('click', (event) => {
             const states = map.queryRenderedFeatures(event.point, {
-            layers: ['centro','leste-1','norte-1', 'norte-2']
+            layers: ['centro','leste-1', 'leste-2','norte-1', 'norte-2', 'oeste', 'sul-1', 'sul-2']
         });
         document.getElementById('pd').innerHTML = states.length
             ? `<p><strong><em>${states[0].properties.lo_setor}</strong> Setor</em></p>
