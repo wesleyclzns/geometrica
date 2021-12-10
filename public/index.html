@@ -27,6 +27,10 @@
         style: 'mapbox://styles/geometrica/ckwp0hs8j0gsh14lszczbtepf' // replace this with your style URL
         });
 
+        // Add zoom and rotation controls to the map.
+        map.addControl(new mapboxgl.NavigationControl());
+
+        
         map.on('load', () => {
         // the rest of the code will go in here
 
@@ -44,7 +48,7 @@
             : `<p>Passe o mouse sobre um lote</p>`; //Pega o lote e setor e quadra
         });
 
-
+        
     });
     </script>
 </body>
