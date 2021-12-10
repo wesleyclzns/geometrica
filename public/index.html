@@ -1,64 +1,51 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="BR">
 <head>
-<meta charset="utf-8">
-<title>GeoMetrica</title>
-<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-<link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
-<link rel="shortcut icon" href="./assets/img/favicon-beta.svg" type="image/x-icon">
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
-<style>
-body { margin: 0; padding: 0; }
-#map { position: absolute; top: 0; bottom: 0; width: 100%; }
-</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoMetrica | Seleção</title>
+
+    <link rel="stylesheet" href="./assets/css/style-select.css">
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+
 </head>
 <body>
-<div id="map"></div>
+    <div id='map'></div>
 
-<script>
-	mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VvbWV0cmljYSIsImEiOiJja3dhcXF3bzAybXY4MnVuaDRjcjVxMGVuIn0.6Xlyyt98tPZx0S-OVeLx_w';
-    const map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/geometrica/ckwp0hs8j0gsh14lszczbtepf',
-        center: [-46.616975, -23.554425],
-        minZoom: 2,
-        zoom: 14.60,
-    });
+    <div class='map-overlay' id='features'><h2>Setor Quadra Lote</h2><div id='pd'><p>Passe o Mouse em um lote!</p></div></div>
 
-    // Add zoom and rotation controls to the map.
-    map.addControl(new mapboxgl.NavigationControl());
+    <div class='map-overlay' id='legend'></div>
 
-    // Add the control to the map.
-    /*  map.addControl(
-        new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken,
-        mapboxgl: mapboxgl
-        })
-    ); */
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VvbWV0cmljYSIsImEiOiJja3dhcXF3bzAybXY4MnVuaDRjcjVxMGVuIn0.6Xlyyt98tPZx0S-OVeLx_w';
 
-    // Add the control to the map.
-    const geocoder = new MapboxGeocoder({
-    accessToken: mapboxgl.accessToken,
-    mapboxgl: mapboxgl
-    });
-
-    map.on('load', () => {
-        // Add a custom vector tileset source. The tileset used in
-        // this example contains a feature for every county in the U.S.
-        // Each county contains four properties. For example:
-        // {
-        //     COUNTY: "Uintah County",
-        //     lo_lote: 49047,
-        //     median-income: 62363,
-        //     population: 34576
-        // }
-        map.addSource('lotes', {
-            'type': 'vector',
-            'url': 'mapbox://geometrica.asot5vxr'
+        const map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/geometrica/ckwp0hs8j0gsh14lszczbtepf' // replace this with your style URL
         });
 
-    });
-</script>
+        map.on('load', () => {
+        // the rest of the code will go in here
 
+        
+        map.on('click', (event) => {
+            const states = map.queryRenderedFeatures(event.point, {
+            layers: ['centro','leste-1','norte-1', 'norte-2']
+        });
+        document.getElementById('pd').innerHTML = states.length
+            ? `<p><strong><em>${states[0].properties.lo_setor}</strong> Setor</em></p>
+            <p><strong><em>${states[0].properties.lo_quadra}</strong> Quadra</em></p>
+            <p><strong><em>${states[0].properties.lo_lote}</strong> Lote</em></p>`
+
+            
+            : `<p>Passe o mouse sobre um lote</p>`; //Pega o lote e setor e quadra
+        });
+
+
+    });
+    </script>
 </body>
 </html>

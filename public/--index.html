@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>GeoMetrica</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+<link rel="shortcut icon" href="./assets/img/favicon-beta.svg" type="image/x-icon">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VvbWV0cmljYSIsImEiOiJja3dhcXF3bzAybXY4MnVuaDRjcjVxMGVuIn0.6Xlyyt98tPZx0S-OVeLx_w';
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/geometrica/ckwp0hs8j0gsh14lszczbtepf',
+        center: [-46.616975, -23.554425],
+        minZoom: 2,
+        zoom: 14.60,
+    });
+
+    // Add zoom and rotation controls to the map.
+    map.addControl(new mapboxgl.NavigationControl());
+
+    // Add the control to the map.
+    /*  map.addControl(
+        new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl
+        })
+    ); */
+
+    // Add the control to the map.
+    const geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl
+    });
+
+    map.on('load', () => {
+        // Add a custom vector tileset source. The tileset used in
+        // this example contains a feature for every county in the U.S.
+        // Each county contains four properties. For example:
+        // {
+        //     COUNTY: "Uintah County",
+        //     lo_lote: 49047,
+        //     median-income: 62363,
+        //     population: 34576
+        // }
+        map.addSource('lotes', {
+            'type': 'vector',
+            'url': 'mapbox://geometrica.asot5vxr'
+        });
+
+    });
+</script>
+
+</body>
+</html>
