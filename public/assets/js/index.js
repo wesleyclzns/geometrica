@@ -13,6 +13,7 @@ map.addControl(new mapboxgl.NavigationControl());
 map.on('load', () => {
 // the rest of the code will go in here
 
+
 // inicio---- SELECIONA OS LOTES E COLOCA EM UMA DIV ----------
     map.on('click', (event) => {
         const states = map.queryRenderedFeatures(event.point, {
@@ -50,13 +51,16 @@ map.on('load', () => {
 
 // inicio---- SELECIONA OS LOTES E COLOCA EM UMA DIV ----------
     map.on('click', (event) => {
-        const macrozona = map.queryRenderedFeatures(event.point, {
+        const macroareas = map.queryRenderedFeatures(event.point, {
         layers: ['macroareas']
-    });
-    document.getElementById('ma').innerHTML = macrozona.length
-        ? `<p><strong><em>${macrozona[0].properties.mc_nome}</strong> Setor</em></p>
-        <p><strong><em>${macrozona[0].properties.mc_nome}</strong> Quadra</em></p>
-        <p><strong><em>${macrozona[0].properties.mc_nome}</strong> Lote</em></p>`
+        });
+
+        const macrozonas = map.queryRenderedFeatures(event.point, {
+            layers: ['macrozonas']
+        });
+
+        document.getElementById('ma').innerHTML = macroareas.length
+            ? `<p><strong><em>${macroareas[0].properties.mc_nome}</strong> Setor</em></p>`
 
         
         : `<p>Passe o mouse sobre um lote</p>`; //Pega o lote e setor e quadra

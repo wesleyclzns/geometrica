@@ -6,24 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GeoMetrica | Seleção</title>
 
+    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap" rel="stylesheet">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/style-select.css">
 
+    <!-- mapbox -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
-
+    
+   <!-- geocoder -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
 </head>
 <body>
     <div id='map'></div>
+
+    <div id="geocoder" class="geocoder"></div>
 
     <div class='map-overlay' id='box-sql'><h2>Setor Quadra Lote</h2><div id='pd'><p>clique em um lote!</p></div></div>
 
     <div class='map-overlay' id='box-legislação'><h2>Legislação</h2><div id='ma'><p>clique em um lote!</p></div></div>
 
-    
+
+
+    <!-- script do mapbox -->
     <script defer src="./assets/js/index.js"></script>
    
 </body>
