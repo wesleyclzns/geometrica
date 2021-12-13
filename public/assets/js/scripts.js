@@ -15,6 +15,8 @@ accessToken: mapboxgl.accessToken,
 mapboxgl: mapboxgl
 });
 
+document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
 map.on('load', () => {
 // the rest of the code will go in here
 
