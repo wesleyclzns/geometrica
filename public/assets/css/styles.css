@@ -5,8 +5,7 @@ body {
   padding: 0;
 }
   
-h2,
-h3 {
+h2, h3 {
   margin: 10px;
   font-size: 18px;
 }
@@ -26,9 +25,9 @@ nav{
   left: 50;
   margin-left: -25%;
   top: 10px;
-  }
+}  
 
-  .geocoder {
+.geocoder {
   position: absolute;
   z-index: 1;
   width: 50%;
@@ -36,10 +35,11 @@ nav{
   margin-left: -25%;
   top: 10px;
   border: red 2px solid;
-  }
-  .mapboxgl-ctrl-geocoder {
+}
+
+.mapboxgl-ctrl-geocoder {
   min-width: 100%;
-  }
+}
 /**
 * Create a position for the map
 * on the page */
@@ -50,7 +50,12 @@ nav{
   width: 100%;
   margin-top: 75px;
 }
-  
+
+.sobreposicao-map {
+  position: absolute;
+  /* top: 0; */
+  /* right: 0; */
+}
 
 #saida {
   position: absolute;
@@ -70,6 +75,7 @@ nav{
   position: absolute;
   top: 0;
   left: 0;
+  width: 150px;
   background: #fff;
   margin: 15px 15px ;
   font-family: 'Roboto', sans-serif;
