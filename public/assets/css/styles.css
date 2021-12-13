@@ -18,7 +18,28 @@ h3 {
 p {
   margin: 10px;
 }
-  
+
+nav{
+  position: absolute;
+  z-index: 1;
+  width: 50%;
+  left: 50;
+  margin-left: -25%;
+  top: 10px;
+  }
+
+  .geocoder {
+  position: absolute;
+  z-index: 1;
+  width: 50%;
+  left: 50%;
+  margin-left: -25%;
+  top: 10px;
+  border: red 2px solid;
+  }
+  .mapboxgl-ctrl-geocoder {
+  min-width: 100%;
+  }
 /**
 * Create a position for the map
 * on the page */
@@ -27,16 +48,28 @@ p {
   top: 0;
   bottom: 0;
   width: 100%;
+  margin-top: 75px;
 }
   
-/**
-* Set rules for how the map overlays
-* (information box and legend) will be displayed
-* on the page. */
-#map-overlay {
+
+#saida {
   position: absolute;
   top: 0;
   right: 0;
+  background: #fff;
+  margin: 15px 15px ;
+  font-family: 'Roboto', sans-serif;
+  overflow: auto;
+  border-radius: 3px;
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+}
+
+#entrada {
+  position: absolute;
+  top: 0;
+  left: 0;
   background: #fff;
   margin: 15px 15px ;
   font-family: 'Roboto', sans-serif;

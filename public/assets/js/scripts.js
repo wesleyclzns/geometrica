@@ -6,7 +6,14 @@ container: 'map', // container id
 style: 'mapbox://styles/geometrica/ckwp0hs8j0gsh14lszczbtepf' // replace this with your style URL
 });
 
+// Add zoom and rotation controls to the map.
+map.addControl(new mapboxgl.NavigationControl());
 
+// Add the control to the map.
+const geocoder = new MapboxGeocoder({
+accessToken: mapboxgl.accessToken,
+mapboxgl: mapboxgl
+});
 
 map.on('load', () => {
 // the rest of the code will go in here
