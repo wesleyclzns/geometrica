@@ -60,7 +60,8 @@ map.on('load', () => {
         });
 
         document.getElementById('ma').innerHTML = macroareas.length
-            ? `<p><strong><em>${macroareas[0].properties.mc_nome}</strong> Setor</em></p>`
+            ? `<p><strong><em>${macroareas[0].properties.mc_nome}</strong> Nome</em></p>
+            <p><strong><em>${macroareas[0].properties.mc_sigla}</strong> Sigla</em></p>`
 
         
         : `<p>Passe o mouse sobre um lote</p>`; //Pega o lote e setor e quadra
