@@ -85,6 +85,13 @@ nav{
   display: flex;
   flex-direction: column;
 }
+
+#box-pesquisa {
+  top: 0;
+  height: 130px;
+  margin-top: 20px;
+  width: 350px;
+}
   
 #box-sql {
   top: 0;
