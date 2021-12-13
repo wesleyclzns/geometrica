@@ -67,7 +67,7 @@
     <section class="mapbox-viewport">
 
         
-        <!-- <div id="geocoder" class="geocoder"></div> -->
+        <div id="geocoder" class="geocoder"></div>
         <div id="map">
             <!-- <script src="./assets/js/mapbox.js"></script> -->
         </div>
@@ -84,14 +84,6 @@
 
                 // Add zoom and rotation controls to the map.
                 map.addControl(new mapboxgl.NavigationControl());
-
-                // Add the control to the map.
-               /*  map.addControl(
-                    new MapboxGeocoder({
-                    accessToken: mapboxgl.accessToken,
-                    mapboxgl: mapboxgl
-                    })
-                ); */
 
                 // Add the control to the map.
                 const geocoder = new MapboxGeocoder({

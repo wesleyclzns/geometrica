@@ -6,8 +6,6 @@ container: 'map', // container id
 style: 'mapbox://styles/geometrica/ckwp0hs8j0gsh14lszczbtepf' // replace this with your style URL
 });
 
-// Add zoom and rotation controls to the map.
-map.addControl(new mapboxgl.NavigationControl());
 
 
 map.on('load', () => {
