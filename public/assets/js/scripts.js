@@ -19,7 +19,7 @@ map.on('load', () => {
         const states = map.queryRenderedFeatures(event.point, {
         layers: ['centro','leste-1', 'leste-2','norte-1', 'norte-2', 'oeste', 'sul-1', 'sul-2']
     });
-    document.getElementById('pd').innerHTML = states.length
+    document.getElementById('sql').innerHTML = states.length
         ? `<p><strong><em>${states[0].properties.lo_setor}</strong> Setor</em></p>
         <p><strong><em>${states[0].properties.lo_quadra}</strong> Quadra</em></p>
         <p><strong><em>${states[0].properties.lo_lote}</strong> Lote</em></p>`
@@ -55,19 +55,28 @@ map.on('load', () => {
         layers: ['macroareas']
         });
 
-        const macrozonas = map.queryRenderedFeatures(event.point, {
-            layers: ['macrozonas']
-        });
-
-        document.getElementById('ma').innerHTML = macroareas.length
+        document.getElementById('macroarea').innerHTML = macroareas.length
             ? `<p><strong><em>${macroareas[0].properties.mc_nome}</strong> Nome</em></p>
             <p><strong><em>${macroareas[0].properties.mc_sigla}</strong> Sigla</em></p>`
 
         
         : `<p>Passe o mouse sobre um lote</p>`; //Pega o lote e setor e quadra
+
+
+        const macrozona = map.queryRenderedFeatures(event.point, {
+            layers: ['macrozona']
+        });
+
+        document.getElementById('macrozona').innerHTML = macrozona.length
+            ? `<p><strong><em>${macrozona[0].properties.nm_perimet}</strong> Nome</em></p>
+            <p><strong><em>${macrozona[0].properties.sg_macro_d}</strong> Sigla</em></p>`
+
+        
+        : `<p>Macrozona Não funcionou</p>`; //Pega o lote e setor e quadra
+       
+
     });
 // fim---- SELECIONA OS LOTES E COLOCA EM UMA DIV ----------
 
-    
 
 });

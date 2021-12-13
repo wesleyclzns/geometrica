@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./assets/css/style-select.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
 
     <!-- mapbox -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
@@ -26,14 +26,26 @@
 
     <div id="geocoder" class="geocoder"></div>
 
-    <div class='map-overlay' id='box-sql'><h2>Setor Quadra Lote</h2><div id='pd'><p>clique em um lote!</p></div></div>
+    <div class='map-overlay' id='box-sql'>
+        <h2>Setor Quadra Lote</h2>
+        <div id='sql'><p>clique em um lote!</p></div>
+    </div>
 
-    <div class='map-overlay' id='box-legislação'><h2>Legislação</h2><div id='ma'><p>clique em um lote!</p></div></div>
+    <div class='map-overlay' id='box-macro'>
+        <h2>Macrozona e Macro Area</h2>
+        <div id='macroarea'><p>Macroarea</p></div>
+        <div id='macrozona'>Macrozona</div>
+    </div>
 
+    <div class='map-overlay' id='box-legislação'>
+        <h2>Macrozona e Macro Area</h2>
+        <div id='macroarea'><p>Macroarea</p></div>
+        <div id='macrozona'>Macrozona</div>
+    </div>
 
 
     <!-- script do mapbox -->
-    <script defer src="./assets/js/index.js"></script>
+    <script defer src="./assets/js/scripts.js"></script>
    
 </body>
 </html>
