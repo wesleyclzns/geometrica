@@ -34,7 +34,7 @@ nav{
   left: 50%;
   margin-left: -25%;
   top: 10px;
-  border: red 2px solid;
+ /*  border: red 2px solid; */
 }
 
 .mapboxgl-ctrl-geocoder {
