@@ -86,4 +86,33 @@ map.on('load', () => {
 // fim---- SELECIONA OS LOTES E COLOCA EM UMA DIV ----------
 
 
+// inicio---- SELECIONA OS LOTES E COLOCA EM UMA DIV ----------
+map.on('click', (event) => {
+    const zoneamento = map.queryRenderedFeatures(event.point, {
+    layers: ['zoneamento']
+    });
+
+    document.getElementById('zoneamento').innerHTML = zoneamento.length
+        ? `<p><strong><em>${zoneamento[0].properties.mc_nome}</strong> Nome</em></p>
+        <p><strong><em>${zoneamento[0].properties.mc_sigla}</strong> Sigla</em></p>`
+
+    
+    : `<p>Passe o mouse sobre um lote</p>`; //Pega o lote e setor e quadra
+
+
+    const zoneamento = map.queryRenderedFeatures(event.point, {
+        layers: ['zoneamento']
+    });
+
+    document.getElementById('zoneamento').innerHTML = zoneamento.length
+        ? `<p><strong><em>${zoneamento[0].properties.ZONA}</strong> Nome</em></p>`
+
+    
+    : `<p>zoneamento Não funcionou</p>`; //Pega o lote e setor e quadra
+   
+
+});
+// fim---- SELECIONA OS LOTES E COLOCA EM UMA DIV ----------
+
+
 });
