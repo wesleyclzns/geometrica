@@ -63,8 +63,8 @@ map.on('load', () => {
         });
 
         document.getElementById('macroarea').innerHTML = macroareas.length
-            ? `<p><strong><em>${macroareas[0].properties.mc_nome}</strong> Nome</em></p>
-            <p><strong><em>${macroareas[0].properties.mc_sigla}</strong> Sigla</em></p>`
+            ? `<p><strong><em>${macroareas[0].properties.mc_nome}</strong></em></p>
+            <p><strong><em>${macroareas[0].properties.mc_sigla}</strong></em></p>`
 
         
         : `<p>Passe o mouse sobre um lote</p>`; //Pega o lote e setor e quadra
@@ -75,8 +75,8 @@ map.on('load', () => {
         });
 
         document.getElementById('macrozona').innerHTML = macrozona.length
-            ? `<p><strong><em>${macrozona[0].properties.nm_perimet}</strong> Nome</em></p>
-            <p><strong><em>${macrozona[0].properties.sg_macro_d}</strong> Sigla</em></p>`
+            ? `<p><strong><em>${macrozona[0].properties.nm_perimet}</strong></em></p>
+            <p><strong><em>${macrozona[0].properties.sg_macro_d}</strong></em></p>`
 
         
         : `<p>Macrozona Não funcionou</p>`; //Pega o lote e setor e quadra
@@ -92,7 +92,7 @@ map.on('click', (event) => {
     });
 
     document.getElementById('zoneamento').innerHTML = zoneamento.length
-        ? `<p><strong><em>${zoneamento[0].properties.ZONA}</strong> Nome</em></p>`
+        ? `<p><strong><em>${zoneamento[0].properties.ZONA}</strong></em></p>`
 
     
     : `<p>Passe o mouse sobre um zoneamento</p>`; //Pega o lote e setor e quadra
@@ -102,8 +102,8 @@ map.on('click', (event) => {
         });
     
         document.getElementById('metropole').innerHTML = metropole.length
-            ? `<p><strong><em>${metropole[0].properties.nm_perimet}</strong> Nome</em></p>
-            <p><strong><em>${metropole[0].properties.nm_tema_di}</strong> Nome</em></p>`
+            ? `<p><strong><em>${metropole[0].properties.nm_perimet}</strong></em></p>
+            <p><strong><em>${metropole[0].properties.nm_tema_di}</strong></em></p>`
     
         
         : `<p>Passe o mouse sobre um metropole</p>`; //Pega o lote e setor e quadra
