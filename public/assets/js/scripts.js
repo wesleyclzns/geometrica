@@ -97,6 +97,17 @@ map.on('click', (event) => {
     
     : `<p>Passe o mouse sobre um zoneamento</p>`; //Pega o lote e setor e quadra
 
+    const metropole = map.queryRenderedFeatures(event.point, {
+        layers: ['metropole']
+        });
+    
+        document.getElementById('metropole').innerHTML = metropole.length
+            ? `<p><strong><em>${metropole[0].properties.nm_perimet}</strong> Nome</em></p>
+            <p><strong><em>${metropole[0].properties.nm_tema_di}</strong> Nome</em></p>`
+    
+        
+        : `<p>Passe o mouse sobre um metropole</p>`; //Pega o lote e setor e quadra
+
 });
 // fim---- SELECIONA OS LOTES E COLOCA EM UMA DIV ----------
 

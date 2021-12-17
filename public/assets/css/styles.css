@@ -3,6 +3,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #FF0099;
 }
   
 h2, h3 {
@@ -61,29 +62,24 @@ nav{
   position: absolute;
   top: 0;
   right: 0;
-  background: #fff;
+  background: #3A4848;
+  color: #fff;
   margin: 15px 15px ;
   font-family: 'Roboto', sans-serif;
   overflow: auto;
-  border-radius: 3px;
-  border: 2px solid red;
+  border-radius: 8px;
+  /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
+  height: 90%;
+  ;
+
 }
 
 #entrada {
   position: absolute;
   top: 0;
   left: 0;
-  width: 150px;
-  background: #fff;
-  margin: 15px 15px ;
-  font-family: 'Roboto', sans-serif;
-  overflow: auto;
-  border-radius: 3px;
-  border: 2px solid red;
-  display: flex;
-  flex-direction: column;
 }
 
 #box-pesquisa {
