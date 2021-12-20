@@ -29,7 +29,8 @@ map.on('load', () => {
     document.getElementById('sql').innerHTML = states.length
         ? `<p><strong><em>${states[0].properties.lo_setor}</strong> Setor</em></p>
         <p><strong><em>${states[0].properties.lo_quadra}</strong> Quadra</em></p>
-        <p><strong><em>${states[0].properties.lo_lote}</strong> Lote</em></p>`
+        <p><strong><em>${states[0].properties.lo_lote}</strong> Lote</em></p>
+        <p><strong><em>${states[0].properties.area}</strong> Area m²</em></p>`
 
         
         : `<p>Passe o mouse sobre um lote</p>`; //Pega o lote e setor e quadra
@@ -56,7 +57,7 @@ map.on('load', () => {
     ); // Place polygon under these labels.
 */
 
-// inicio---- SELECIONA OS LOTES E COLOCA EM UMA DIV ----------
+// inicio---- SELECIONA AS MACROZONA E MACROAREA E COLOCA EM UMA DIV ----------
     map.on('click', (event) => {
         const macroareas = map.queryRenderedFeatures(event.point, {
         layers: ['macroareas']
@@ -83,9 +84,9 @@ map.on('load', () => {
        
 
     });
-// fim---- SELECIONA OS LOTES E COLOCA EM UMA DIV ----------
+// fim---- SELECIONA AS MACROZONA E MACROAREA E COLOCA EM UMA DIV ----------
 
-// inicio---- SELECIONA OS LOTES E COLOCA EM UMA DIV ----------
+// inicio---- SELECIONA AS ZONAS E COLOCA EM UMA DIV ----------
 map.on('click', (event) => {
     const zoneamento = map.queryRenderedFeatures(event.point, {
     layers: ['zoneamento']
@@ -98,6 +99,6 @@ map.on('click', (event) => {
     : `<p>Passe o mouse sobre um zoneamento</p>`; //Pega o lote e setor e quadra
 
 });
-// fim---- SELECIONA OS LOTES E COLOCA EM UMA DIV ----------
+// fim---- SELECIONA AS ZONAS E COLOCA EM UMA DIV ----------
 
 });
