@@ -62,8 +62,8 @@ nav{
   position: absolute;
   top: 0;
   right: 0;
-  background: #3A4848;
-  color: #fff;
+  background: #fff;
+  color: rgb(0, 0, 0);
   margin: 15px 15px ;
   font-family: 'Roboto', sans-serif;
   overflow: auto;
@@ -90,14 +90,15 @@ nav{
 }
   
 #box-sql {
+  border: 2px red solid;
   top: 0;
-  height: 130px;
+  height: 150px;
   margin-top: 20px;
   width: 250px;
 }
   
 .box-legislacao {
-  top: 150px;
+  top: 200px;
   height: 100px;
   margin-top: 20px;
   width: 250px;
