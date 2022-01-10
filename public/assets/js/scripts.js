@@ -17,9 +17,21 @@ mapboxgl: mapboxgl
 
 document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
+
 map.on('load', () => {
 // the rest of the code will go in here
 
+// inicio---- ADICIONA OS LOGRADOUROS ---------
+map.addLayer({
+    id: 'logradouro',
+    type: 'line',
+    source: {
+      type: 'vector',
+      url: 'mapbox://geometrica.czilpx0q'
+    },
+    'source-layer': 'logs-8bkqn7'
+});
+// fim---- ADICIONA OS LOGRADOUROS ---------
 
 // inicio---- SELECIONA OS LOTES E COLOCA EM UMA DIV ----------
     map.on('click', (event) => {
@@ -111,5 +123,8 @@ map.on('click', (event) => {
 
 });
 // fim---- SELECIONA AS ZONAS E COLOCA EM UMA DIV ----------
+
+
+
 
 });
