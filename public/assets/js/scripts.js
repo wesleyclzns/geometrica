@@ -49,27 +49,7 @@ map.addLayer({
     });
 // fim---- SELECIONA OS LOTES E COLOCA EM UMA DIV ----------
 
-/*     map.addSource('macroareas', {
-        'type': 'vector',
-        'url': 'mapbox://geometrica.073j6qdv'
-    });
-        
-    map.addLayer(
-    {
-        'id': 'macroareas',
-        'type': 'fill',
-        'source': 'macroareas',
-        'source-layer': 'macroareas',
-        'paint': {
-            'fill-outline-color': 'rgba(0,0,0,0.1)',
-            'fill-color': 'rgba(0,0,0,0.1)'
-        }
-    },
-    'settlement-label'
-    ); // Place polygon under these labels.
-*/
-
-// inicio---- SELECIONA AS MACROZONA E MACROAREA E COLOCA EM UMA DIV ----------
+// inicio---- SELECIONA AS MACROAREA E COLOCA EM UMA DIV ----------
     map.on('click', (event) => {
         const macroareas = map.queryRenderedFeatures(event.point, {
         layers: ['macroareas']
@@ -81,8 +61,10 @@ map.addLayer({
 
         
         : `<p>Passe o mouse sobre um lote</p>`; //Pega o lote e setor e quadra
+// fim---- SELECIONA AS MACROAREA E COLOCA EM UMA DIV ----------
 
 
+// inicio---- SELECIONA AS MACROZONA E COLOCA EM UMA DIV ----------
         const macrozona = map.queryRenderedFeatures(event.point, {
             layers: ['macrozona']
         });
@@ -96,7 +78,7 @@ map.addLayer({
        
 
     });
-// fim---- SELECIONA AS MACROZONA E MACROAREA E COLOCA EM UMA DIV ----------
+// fim---- SELECIONA AS MACROZONA E COLOCA EM UMA DIV ----------
 
 // inicio---- SELECIONA AS ZONAS E COLOCA EM UMA DIV ----------
 map.on('click', (event) => {
@@ -109,7 +91,9 @@ map.on('click', (event) => {
 
     
     : `<p>Passe o mouse sobre um zoneamento</p>`; //Pega o lote e setor e quadra
+// fim---- SELECIONA AS ZONAS E COLOCA EM UMA DIV ----------
 
+// inicio---- SELECIONA AS SETOR MACROAREA ES. METROPOLITANA E COLOCA EM UMA DIV ----------
     const metropole = map.queryRenderedFeatures(event.point, {
         layers: ['metropole']
         });
@@ -120,9 +104,38 @@ map.on('click', (event) => {
     
         
         : `<p>Passe o mouse sobre um metropole</p>`; //Pega o lote e setor e quadra
-
 });
-// fim---- SELECIONA AS ZONAS E COLOCA EM UMA DIV ----------
+// fim---- SELECIONA AS SETOR MACROAREA ES. METROPOLITANA E COLOCA EM UMA DIV ----------
+
+// inicio---- SELECIONA UM MELHORAMENTO E COLOCA EM UMA DIV ----------
+map.on('click', (event) => {
+    const melhoramento = map.queryRenderedFeatures(event.point, {
+    layers: ['melhoramento']
+    });
+
+    document.getElementById('melhoramento').innerHTML = melhoramento.length
+        ? `<p><strong><em>${melhoramento[0].properties.dp_tipo}</strong>-TIPO</em></p>
+        <p><strong><em>${melhoramento[0].properties.dp_planta}</strong>-PLANTA</em></p>
+        <p><strong><em>${melhoramento[0].properties.dp_decreto}</strong>-DECRETO</em></p>
+        <p><strong><em><a href="${melhoramento[0].properties.dp_link}" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">Link do Decreto</a></strong></em></p>`
+    
+    : `<p>Não exitem melhoramentos</p>`; //Pega o lote e setor e quadra
+// fim---- SELECIONA UM MELHORAMENTO E COLOCA EM UMA DIV ----------
+
+// inicio---- SELECIONA UM LIMITE ADMINISTRATIVO E COLOCA EM UMA DIV ----------
+    const limites = map.queryRenderedFeatures(event.point, {
+        layers: ['limites']
+        });
+    
+        document.getElementById('limites').innerHTML = limites.length
+            ? `<p><strong><em>${limites[0].properties.ds_nome}</strong>-DISTRITO</em></p>
+            <p><strong><em>${limites[0].properties.ds_subpref}</strong>-SUBPREF</em></p>
+            <p><strong><em>${limites[0].properties.municipio}</strong>-MUNICIPIO</em></p>`
+    
+        
+        : `<p>Passe o mouse sobre um limites</p>`; //Pega o lote e setor e quadra
+// fim---- SELECIONA UM LIMITE ADMINISTRATIVO E COLOCA EM UMA DIV ----------
+});
 
 
 
