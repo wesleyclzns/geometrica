@@ -33,6 +33,20 @@ map.addLayer({
 });
 // fim---- ADICIONA OS LOGRADOUROS ---------
 
+// inicio---- ADICIONA AS OUC ---------
+map.addLayer({
+    id: 'ouc',
+    type: 'fill',
+        source: {
+      type: 'vector',
+      url: 'mapbox://geometrica.dth6qop5'
+    },
+    'source-layer': 'ouc-6tihh1',
+   
+    
+});
+// fim---- ADICIONA AS OUC ---------
+
 // inicio---- SELECIONA OS LOTES E COLOCA EM UMA DIV ----------
     map.on('click', (event) => {
         const states = map.queryRenderedFeatures(event.point, {
@@ -136,6 +150,23 @@ map.on('click', (event) => {
         : `<p>Passe o mouse sobre um limites</p>`; //Pega o lote e setor e quadra
 // fim---- SELECIONA UM LIMITE ADMINISTRATIVO E COLOCA EM UMA DIV ----------
 });
+
+// inicio---- SELECIONA OS LOGRADOUROS E COLOCA EM UMA DIV---------
+map.on('click', (event) => {
+    const ouc = map.queryRenderedFeatures(event.point, {
+    layers: ['ouc']
+    });
+
+    document.getElementById('ouc').innerHTML = ouc.length
+        ? `<p><strong><em>${ouc[0].properties.ou_lei}</strong>-CADLOG</em></p>
+        <p><strong><em>${ouc[0].properties.ou_nome}</strong></em></p>
+        <p><strong><em>${ouc[0].properties.ou_sigla}</strong></em></p>
+`
+    
+    : `<p>Não exitem melhoramentos</p>`; //Pega o lote e setor e quadra
+
+});
+// fim---- SELECIONA OS LOGRADOUROS E COLOCA EM UMA DIV---------
 
 
 
