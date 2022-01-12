@@ -58,7 +58,7 @@ map.addLayer({
 
 //  inicio---------- CRIA VARIAVEIS PARA MANIPULAR O HTML ----------
     map.on('click', (event) => {
-        const states = map.queryRenderedFeatures(event.point, {
+        const sql = map.queryRenderedFeatures(event.point, {
             layers: ['centro','leste-1', 'leste-2','norte-1', 'norte-2', 'oeste', 'sul-1', 'sul-2']
         });
 
