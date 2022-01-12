@@ -2,8 +2,8 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VvbWV0cmljYSIsImEiOiJja3dhcXF3bzAybXY4MnVuaDRjcjVxMGVuIn0.6Xlyyt98tPZx0S-OVeLx_w';
 
 const map = new mapboxgl.Map({
-container: 'map', // container id
-style: 'mapbox://styles/geometrica/ckwp0hs8j0gsh14lszczbtepf' // replace this with your style URL
+container: 'map', 
+style: 'mapbox://styles/geometrica/ckwp0hs8j0gsh14lszczbtepf'
 });
 
 // Add zoom and rotation controls to the map.
@@ -21,7 +21,8 @@ document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 map.on('load', () => {
 // the rest of the code will go in here
 
-// inicio---- ADICIONA OS LOGRADOUROS ---------
+//inicio---------- ADICIONA OS TILESETS DO MAPBOX STUDIO ----------
+// inicio---- ADICIONA O LAYER DOS LOGRADOUROS ---------
 map.addLayer({
     id: 'logradouro',
     type: 'line',
@@ -35,10 +36,10 @@ map.addLayer({
         'line-opacity':0.5
     }
 });
-// fim---- ADICIONA OS LOGRADOUROS ---------
+// fim---- ADICIONA  O LAYER DOS LOGRADOUROS ---------
 
 
-// inicio---- ADICIONA AS OUC ---------
+// inicio---- ADICIONA O LAYER DA OUC ---------
 map.addLayer({
     id: 'ouc',
     type: 'fill',
@@ -52,144 +53,129 @@ map.addLayer({
         'fill-opacity':0
     }  
 });
-// fim---- ADICIONA AS OUC ---------
+// fim---- ADICIONA O LAYER DA OUC ---------
+//fim---------- ADICIONA OS TILESETS DO MAPBOX STUDIO ----------
 
-// inicio---- SELECIONA OS LOTES E COLOCA EM UMA DIV ----------
+//  inicio---------- CRIA VARIAVEIS PARA MANIPULAR O HTML ----------
     map.on('click', (event) => {
         const states = map.queryRenderedFeatures(event.point, {
-        layers: ['centro','leste-1', 'leste-2','norte-1', 'norte-2', 'oeste', 'sul-1', 'sul-2']
-    });
-    document.getElementById('sql').innerHTML = states.length
-        ? `<p><strong><em>${states[0].properties.lo_setor}</strong> Setor</em></p>
-        <p><strong><em>${states[0].properties.lo_quadra}</strong> Quadra</em></p>
-        <p><strong><em>${states[0].properties.lo_lote}</strong> Lote</em></p>
-        <p><strong><em>${states[0].properties.area}</strong> Area m²</em></p>`
-
-        
-        : `<p>Passe o mouse sobre um lote</p>`; //Pega o lote e setor e quadra
-    });
-// fim---- SELECIONA OS LOTES E COLOCA EM UMA DIV ----------
-
-// inicio---- SELECIONA AS MACROAREA E COLOCA EM UMA DIV ----------
-    map.on('click', (event) => {
-        const macroareas = map.queryRenderedFeatures(event.point, {
-        layers: ['macroareas']
+            layers: ['centro','leste-1', 'leste-2','norte-1', 'norte-2', 'oeste', 'sul-1', 'sul-2']
         });
 
-        document.getElementById('macroarea').innerHTML = macroareas.length
-            ? `<p><strong><em>${macroareas[0].properties.mc_nome}</strong></em></p>
-            <p><strong><em>${macroareas[0].properties.mc_sigla}</strong></em></p>`
+        const macroareas = map.queryRenderedFeatures(event.point, {
+            layers: ['macroareas']
+        });
 
-        
-        : `<p>Passe o mouse sobre um lote</p>`; //Pega o lote e setor e quadra
-// fim---- SELECIONA AS MACROAREA E COLOCA EM UMA DIV ----------
-
-
-// inicio---- SELECIONA AS MACROZONA E COLOCA EM UMA DIV ----------
         const macrozona = map.queryRenderedFeatures(event.point, {
             layers: ['macrozona']
         });
 
-        document.getElementById('macrozona').innerHTML = macrozona.length
+        const zoneamento = map.queryRenderedFeatures(event.point, {
+            layers: ['zoneamento']
+        });
+
+        const metropole = map.queryRenderedFeatures(event.point, {
+            layers: ['metropole']
+        });
+
+        const melhoramento = map.queryRenderedFeatures(event.point, {
+            layers: ['melhoramento']
+        });
+
+        const limites = map.queryRenderedFeatures(event.point, {
+            layers: ['limites']
+        });
+
+        const ouc = map.queryRenderedFeatures(event.point, {
+            layers: ['ouc']
+        });
+
+        const logradouro = map.queryRenderedFeatures(event.point, {
+            layers: ['logradouro']
+        });
+
+//  fim---------- CRIA VARIAVEIS PARA MANIPULAR O HTML ----------
+
+//  inicio---------- MANIPULA O HTML ----------
+    //  ---------- SETOR, QUADRA, LOTE (sql) ----------
+    document.getElementById('sql').innerHTML = sql.length
+        ? `<p><strong><em>${sql[0].properties.lo_setor}</strong> Setor</em></p>
+        <p><strong><em>${sql[0].properties.lo_quadra}</strong> Quadra</em></p>
+        <p><strong><em>${sql[0].properties.lo_lote}</strong> Lote</em></p>
+        <p><strong><em>${sql[0].properties.area}</strong> Area m²</em></p>`
+
+        
+        : `<p>Clique em um lote!</p>`; 
+
+
+    //  ---------- MACROAREAS ----------
+    document.getElementById('macroarea').innerHTML = macroareas.length
+        ? `<p><strong><em>${macroareas[0].properties.mc_nome}</strong></em></p>
+        <p><strong><em>${macroareas[0].properties.mc_sigla}</strong></em></p>`
+
+        
+        : `<p>Não exite macroarea para o lote selecionado</p>`;
+    
+    //  ---------- MACROZONA ----------
+    document.getElementById('macrozona').innerHTML = macrozona.length
             ? `<p><strong><em>${macrozona[0].properties.nm_perimet}</strong></em></p>
             <p><strong><em>${macrozona[0].properties.sg_macro_d}</strong></em></p>`
 
         
-        : `<p>Macrozona Não funcionou</p>`; //Pega o lote e setor e quadra
-       
-
-    });
-// fim---- SELECIONA AS MACROZONA E COLOCA EM UMA DIV ----------
-
-// inicio---- SELECIONA AS ZONAS E COLOCA EM UMA DIV ----------
-map.on('click', (event) => {
-    const zoneamento = map.queryRenderedFeatures(event.point, {
-    layers: ['zoneamento']
-    });
-
+        : `<p>Não exite macrozona para o lote selecionado</p>`; 
+    
+    //  ---------- ZONEAMENTO ----------
     document.getElementById('zoneamento').innerHTML = zoneamento.length
         ? `<p><strong><em>${zoneamento[0].properties.ZONA}</strong></em></p>`
 
     
-    : `<p>Passe o mouse sobre um zoneamento</p>`; //Pega o lote e setor e quadra
-// fim---- SELECIONA AS ZONAS E COLOCA EM UMA DIV ----------
-
-// inicio---- SELECIONA AS SETOR MACROAREA ES. METROPOLITANA E COLOCA EM UMA DIV ----------
-    const metropole = map.queryRenderedFeatures(event.point, {
-        layers: ['metropole']
-        });
+    : `<p>Não exitem zoneamento para o lote selecionado</p>`; 
     
-        document.getElementById('metropole').innerHTML = metropole.length
+    //  ---------- SETOR DA MACROZONA DE ESTRUTURAÇÃO METROPOLITANA (mem) ----------
+    document.getElementById('metropole').innerHTML = metropole.length
             ? `<p><strong><em>${metropole[0].properties.nm_perimet}</strong></em></p>
             <p><strong><em>${metropole[0].properties.nm_tema_di}</strong></em></p>`
     
         
-        : `<p>Passe o mouse sobre um metropole</p>`; //Pega o lote e setor e quadra
-});
-// fim---- SELECIONA AS SETOR MACROAREA ES. METROPOLITANA E COLOCA EM UMA DIV ----------
-
-// inicio---- SELECIONA UM MELHORAMENTO E COLOCA EM UMA DIV ----------
-map.on('click', (event) => {
-    const melhoramento = map.queryRenderedFeatures(event.point, {
-    layers: ['melhoramento']
-    });
-
+        : `<p>Não exitem MEM para o lote selecionado</p>`; 
+    
+    //  ---------- MELHORAMENTO VIARIO/DESAPROPRIAÇÕES ----------
     document.getElementById('melhoramento').innerHTML = melhoramento.length
         ? `<p><strong><em>${melhoramento[0].properties.dp_tipo}</strong>-TIPO</em></p>
         <p><strong><em>${melhoramento[0].properties.dp_planta}</strong>-PLANTA</em></p>
         <p><strong><em>${melhoramento[0].properties.dp_decreto}</strong>-DECRETO</em></p>
         <p><strong><em><a href="${melhoramento[0].properties.dp_link}" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">Link do Decreto</a></strong></em></p>`
     
-    : `<p>Não exitem melhoramentos</p>`; //Pega o lote e setor e quadra
-// fim---- SELECIONA UM MELHORAMENTO E COLOCA EM UMA DIV ----------
+    : `<p>Não exitem melhoramentos</p>`; 
 
-// inicio---- SELECIONA UM LIMITE ADMINISTRATIVO E COLOCA EM UMA DIV ----------
-    const limites = map.queryRenderedFeatures(event.point, {
-        layers: ['limites']
-        });
-    
-        document.getElementById('limites').innerHTML = limites.length
+    //  ---------- LIMITES ADMINISTRATIVOS ----------
+    document.getElementById('limites').innerHTML = limites.length
             ? `<p><strong><em>${limites[0].properties.ds_nome}</strong>-DISTRITO</em></p>
             <p><strong><em>${limites[0].properties.ds_subpref}</strong>-SUBPREF</em></p>
             <p><strong><em>${limites[0].properties.municipio}</strong>-MUNICIPIO</em></p>`
     
         
-        : `<p>Passe o mouse sobre um limites</p>`; //Pega o lote e setor e quadra
-// fim---- SELECIONA UM LIMITE ADMINISTRATIVO E COLOCA EM UMA DIV ----------
-});
-
-// inicio---- SELECIONA AS OUC E COLOCA EM UMA DIV---------
-map.on('click', (event) => {
-    const ouc = map.queryRenderedFeatures(event.point, {
-    layers: ['ouc']
-    });
-
+        : `<p>Você selecionou um territorio ainda indisponivel em dados</p>`; //
+    
+    //  ---------- OPERAÇÕES URBANAS (ouc) ----------
     document.getElementById('ouc').innerHTML = ouc.length
         ? `<p><strong><em>${ouc[0].properties.ou_lei}</strong></em></p>
         <p><strong><em>${ouc[0].properties.ou_nome}</strong></em></p>
         <p><strong><em>${ouc[0].properties.ou_sigla}</strong></em></p>
 `
     
-    : `<p>Não exitem melhoramentos</p>`; //Pega o lote e setor e quadra
+    : `<p>Não exitem melhoramentos viarios</p>`; 
 
-});
-// fim---- SELECIONA AS OUC E COLOCA EM UMA DIV---------
-
-
-// inicio---- SELECIONA OS LOGRADOUROS E COLOCA EM UMA DIV---------
-map.on('click', (event) => {
-    const logradouro = map.queryRenderedFeatures(event.point, {
-    layers: ['logradouro']
-    });
-
+    //  ---------- LOGRADOUROS ----------
     document.getElementById('logradouro').innerHTML = logradouro.length
         ? `<p>${logradouro[0].properties.lg_tipo} ${logradouro[0].properties.lg_titulo} ${logradouro[0].properties.lg_prep} ${logradouro[0].properties.lg_nome}</p>
         <p><strong><em>${logradouro[0].properties.lg_codlog}</strong></em></p>`
     
-    : `<p>Não exitem logradouros</p>`; //Pega o lote e setor e quadra
+    : `<p>Não exitem logradouros</p>`; 
 
-});
-// fim---- SELECIONA OS LOGRADOUROS E COLOCA EM UMA DIV---------
+    });
+
+
 
 
 
