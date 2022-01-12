@@ -158,19 +158,35 @@ map.on('click', (event) => {
 // fim---- SELECIONA UM LIMITE ADMINISTRATIVO E COLOCA EM UMA DIV ----------
 });
 
-// inicio---- SELECIONA OS LOGRADOUROS E COLOCA EM UMA DIV---------
+// inicio---- SELECIONA AS OUC E COLOCA EM UMA DIV---------
 map.on('click', (event) => {
     const ouc = map.queryRenderedFeatures(event.point, {
     layers: ['ouc']
     });
 
     document.getElementById('ouc').innerHTML = ouc.length
-        ? `<p><strong><em>${ouc[0].properties.ou_lei}</strong>-CADLOG</em></p>
+        ? `<p><strong><em>${ouc[0].properties.ou_lei}</strong></em></p>
         <p><strong><em>${ouc[0].properties.ou_nome}</strong></em></p>
         <p><strong><em>${ouc[0].properties.ou_sigla}</strong></em></p>
 `
     
     : `<p>Não exitem melhoramentos</p>`; //Pega o lote e setor e quadra
+
+});
+// fim---- SELECIONA AS OUC E COLOCA EM UMA DIV---------
+
+
+// inicio---- SELECIONA OS LOGRADOUROS E COLOCA EM UMA DIV---------
+map.on('click', (event) => {
+    const logradouro = map.queryRenderedFeatures(event.point, {
+    layers: ['logradouro']
+    });
+
+    document.getElementById('logradouro').innerHTML = logradouro.length
+        ? `<p>${logradouro[0].properties.lg_tipo} ${logradouro[0].properties.lg_titulo} ${logradouro[0].properties.lg_prep} ${logradouro[0].properties.lg_nome}</p>
+        <p><strong><em>${logradouro[0].properties.lg_codlog}</strong></em></p>`
+    
+    : `<p>Não exitem logradouros</p>`; //Pega o lote e setor e quadra
 
 });
 // fim---- SELECIONA OS LOGRADOUROS E COLOCA EM UMA DIV---------
