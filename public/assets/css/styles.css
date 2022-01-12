@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #FF0099;
+  overflow: auto;
 }
   
 h2, h3 {
@@ -19,24 +20,16 @@ p {
   margin: 10px;
 }
 
-nav{
-  position: absolute;
-  z-index: 1;
-  width: 50%;
-  left: 50;
-  margin-left: -25%;
-  top: 10px;
-}  
 
-.geocoder {
+
+/* .geocoder {
   position: absolute;
   z-index: 1;
   width: 50%;
   left: 50%;
   margin-left: -25%;
   top: 10px;
- /*  border: red 2px solid; */
-}
+} */
 
 .mapboxgl-ctrl-geocoder {
   min-width: 100%;
@@ -48,38 +41,40 @@ nav{
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 100%;
+  width: 80%;
+  height: 90%;
   margin-top: 75px;
 }
 
-.sobreposicao-map {
-  position: absolute;
-  /* top: 0; */
-  /* right: 0; */
-}
+
 
 #saida {
   position: absolute;
-  top: 0;
   right: 0;
   background: #3A4848;
   color: rgb(255, 255, 255);
-  margin: 15px 15px ;
   font-family: 'Roboto', sans-serif;
   overflow: auto;
-  border-radius: 8px;
-  /* border: 2px solid red; */
-  display: flex;
-  flex-direction: column;
-  height: 96%;
+  width: 20%;
+  height: 100%;
   ;
 
 }
 
 #entrada {
-  position: absolute;
-  top: 0;
-  left: 0;
+    position: absolute;
+    background: #3A4848;
+    color: rgb(255, 255, 255);
+    font-family: 'Roboto', sans-serif;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+  
+  }
 }
 
 #box-pesquisa {
