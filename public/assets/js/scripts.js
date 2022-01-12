@@ -29,21 +29,28 @@ map.addLayer({
       type: 'vector',
       url: 'mapbox://geometrica.czilpx0q'
     },
-    'source-layer': 'logs-8bkqn7'
+    'source-layer': 'logs-8bkqn7',
+    paint: {
+        'line-color': '#627BC1',
+        'line-opacity':0.5
+    }
 });
 // fim---- ADICIONA OS LOGRADOUROS ---------
+
 
 // inicio---- ADICIONA AS OUC ---------
 map.addLayer({
     id: 'ouc',
     type: 'fill',
-        source: {
+    source: {
       type: 'vector',
       url: 'mapbox://geometrica.dth6qop5'
     },
     'source-layer': 'ouc-6tihh1',
-   
-    
+    layout: {},
+    paint: {
+        'fill-opacity':0
+    }  
 });
 // fim---- ADICIONA AS OUC ---------
 
