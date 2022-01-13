@@ -150,9 +150,18 @@ p {
   flex-direction: column;
 }
 
-.limites{
+.em-linha{
   display: flex;
   align-items: baseline;
   
+}
+
+
+#legislacao{
+  border-radius: 6px;
+  margin: 18px;
+  background-color: #FFFFFF;
+  color: #3A4848;
+  border: #FF0099 solid 2px;
 }
 
