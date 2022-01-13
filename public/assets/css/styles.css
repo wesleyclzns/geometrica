@@ -20,15 +20,25 @@ body {
   
 h2, h3 {
   margin: 10px;
-  font-size: 18px;
+  font-size: 20px;
 }
   
 h3 {
-  font-size: 16px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+
 }
   
 p {
-  margin: 10px;
+  margin: 14px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
 }
 
 .app{
@@ -96,6 +106,30 @@ p {
    
 }
 
+.sql-area{
+  border: gold 2px solid;
+  border-radius: 6px;
+  margin: 18px;
+  background-color: #FFFFFF;
+  color: #3A4848;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sql{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+}
+
+#area{
+  display: flex;
+  align-items: baseline;
+
+}
 
   
 #box-sql {
