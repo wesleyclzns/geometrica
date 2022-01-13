@@ -1,23 +1,3 @@
-
-mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VvbWV0cmljYSIsImEiOiJja3dhcXF3bzAybXY4MnVuaDRjcjVxMGVuIn0.6Xlyyt98tPZx0S-OVeLx_w';
-
-const map = new mapboxgl.Map({
-container: 'map', 
-style: 'mapbox://styles/geometrica/ckwp0hs8j0gsh14lszczbtepf'
-});
-
-// Add zoom and rotation controls to the map.
-map.addControl(new mapboxgl.NavigationControl());
-
-// Add the control to the map.
-const geocoder = new MapboxGeocoder({
-accessToken: mapboxgl.accessToken,
-mapboxgl: mapboxgl
-});
-
-document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-
-
 map.on('load', () => {
 // the rest of the code will go in here
 
