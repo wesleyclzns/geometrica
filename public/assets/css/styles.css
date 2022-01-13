@@ -40,6 +40,16 @@ p {
   line-height: 21px;
 }
 
+a{
+  text-decoration: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FF0099;
+}
+
 .app{
   display: flex;
   align-items: flex-start;
@@ -163,5 +173,16 @@ p {
   background-color: #FFFFFF;
   color: #3A4848;
   border: #FF0099 solid 2px;
+
 }
 
+#outros{
+  border-radius: 6px;
+  margin: 18px;
+  background-color: #FFFFFF;
+  color: #3A4848;
+  border: solid 2px rgb(19, 119, 250);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
