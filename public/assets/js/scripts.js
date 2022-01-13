@@ -78,42 +78,42 @@ map.on('load', () => {
 
         //  inicio---------- MANIPULA O HTML ----------
         //  ---------- SETOR, QUADRA, LOTE (sql) ----------
-        /* document.querySelector('#setor').querySelector('p').textContent = sql[0].properties.lo_setor;
+        document.querySelector('#setor').querySelector('p').textContent = sql[0].properties.lo_setor;
         document.querySelector('#quadra').querySelector('p').textContent = sql[0].properties.lo_quadra;
         document.querySelector('#lote').querySelector('p').textContent = sql[0].properties.lo_lote;
         document.querySelector('#condominio').querySelector('p').textContent = sql[0].properties.lo_condomi;
-        document.querySelector('#area').querySelector('p').textContent = sql[0].properties.area; */
+        document.querySelector('#area').querySelector('p').textContent = sql[0].properties.area;
 
         //  ---------- LOGRADOURO ----------
-        /* document.querySelector('#cadlog').querySelector('p').textContent = logradouro[0].properties.lg_codlog;
+        document.querySelector('#cadlog').querySelector('p').textContent = logradouro[0].properties.lg_codlog;
         
-        document.querySelector('#logradouro').querySelector('p').textContent = logradouro[0].properties.lg_tipo + ' ' + logradouro[0].properties.lg_titulo + ' ' + logradouro[0].properties.lg_prep + ' ' + logradouro[0].properties.lg_nome; */
+        document.querySelector('#logradouro').querySelector('p').textContent = logradouro[0].properties.lg_tipo + ' ' + logradouro[0].properties.lg_titulo + ' ' + logradouro[0].properties.lg_prep + ' ' + logradouro[0].properties.lg_nome;
 
         //  ---------- LIMITES ADMINISTRATIVOS ----------
-        /* document.querySelector('#municipio').querySelector('p').textContent = limites[0].properties.municipio;
+        document.querySelector('#municipio').querySelector('p').textContent = limites[0].properties.municipio;
         document.querySelector('#subprefeitura').querySelector('p').textContent = limites[0].properties.ds_subpref;
-        document.querySelector('#distrito').querySelector('p').textContent = limites[0].properties.ds_nome; */
+        document.querySelector('#distrito').querySelector('p').textContent = limites[0].properties.ds_nome;
         
         //  ---------- LEGISLAÇÃO URBANA ----------
         //  ---------- ZONEAMENTO ----------
-        /* document.querySelector('#zoneamento').querySelector('p').textContent = zoneamento[0].properties.ZONA; */
+        document.querySelector('#zoneamento').querySelector('p').textContent = zoneamento[0].properties.ZONA;
 
         //  ---------- MACROZONA ----------
-        /* document.querySelector('#macrozona').querySelector('[data-nome]').textContent = macrozona[0].properties.nm_perimet;
-        document.querySelector('#macrozona').querySelector('[data-sigla]').textContent = macrozona[0].properties.sg_macro_d; */
+        document.querySelector('#macrozona').querySelector('[data-nome]').textContent = macrozona[0].properties.nm_perimet;
+        document.querySelector('#macrozona').querySelector('[data-sigla]').textContent = macrozona[0].properties.sg_macro_d;
 
         //  ---------- MACROAREA ----------
-        /* document.querySelector('#macroarea').querySelector('[data-nome]').textContent = macroareas[0].properties.mc_nome;
-        document.querySelector('#macroarea').querySelector('[data-sigla]').textContent = macroareas[0].properties.mc_sigla; */
+        document.querySelector('#macroarea').querySelector('[data-nome]').textContent = macroareas[0].properties.mc_nome;
+        document.querySelector('#macroarea').querySelector('[data-sigla]').textContent = macroareas[0].properties.mc_sigla;
 
         //  ---------- OPERAÇÃO URBANA ----------
-         /* document.querySelector('#ouc').querySelector('[data-lei]').textContent = ouc[0].properties.ou_lei;
+         document.querySelector('#ouc').querySelector('[data-lei]').textContent = ouc[0].properties.ou_lei;
          document.querySelector('#ouc').querySelector('[data-nome]').textContent = ouc[0].properties.ou_nome;
-         document.querySelector('#ouc').querySelector('[data-sigla]').textContent = ouc[0].properties.ou_sigla; */
+         document.querySelector('#ouc').querySelector('[data-sigla]').textContent = ouc[0].properties.ou_sigla;
 
 
          //  ---------- Setores da Macroárea (MEM) ----------
-         /* document.querySelector('#metropole').querySelector('p').textContent = metropole[0].properties.nm_perimet; */
+         document.querySelector('#metropole').querySelector('p').textContent = metropole[0].properties.nm_perimet;
 
         //  ---------- MELHORAMENTO VIARIO ----------
         document.querySelector('#melhoramento').querySelector('[data-tipo]').textContent = melhoramento[0].properties.dp_tipo;
