@@ -90,12 +90,20 @@ map.on('load', () => {
         document.querySelector('#logradouro').querySelector('p').textContent = logradouro[0].properties.lg_tipo + ' ' + logradouro[0].properties.lg_titulo + ' ' + logradouro[0].properties.lg_prep + ' ' + logradouro[0].properties.lg_nome; */
 
         //  ---------- LIMITES ADMINISTRATIVOS ----------
-        document.querySelector('#municipio').querySelector('p').textContent = limites[0].properties.municipio;
+        /* document.querySelector('#municipio').querySelector('p').textContent = limites[0].properties.municipio;
         document.querySelector('#subprefeitura').querySelector('p').textContent = limites[0].properties.ds_subpref;
-        document.querySelector('#distrito').querySelector('p').textContent = limites[0].properties.ds_nome;
+        document.querySelector('#distrito').querySelector('p').textContent = limites[0].properties.ds_nome; */
         
         //  ---------- LEGISLAÇÃO URBANA ----------
-        
+        //  ---------- ZONEAMENTO ----------
+        /* document.querySelector('#zoneamento').querySelector('p').textContent = zoneamento[0].properties.ZONA; */
+
+        //  ---------- MACROZONA ----------
+        document.querySelector('#macrozona').querySelector('[data-nome]').textContent = macrozona[0].properties.nm_perimet;
+        document.querySelector('#macrozona').querySelector('[data-sigla]').textContent = macrozona[0].properties.sg_macro_d;
+
+
+
         //  ---------- MELHORAMENTO VIARIO ----------
     });
 
