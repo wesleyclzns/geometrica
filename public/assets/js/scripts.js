@@ -78,16 +78,12 @@ map.addLayer({
 
 //  inicio---------- MANIPULA O HTML ----------
     //  ---------- SETOR, QUADRA, LOTE (sql) ----------
-    document.getElementById('sql').innerHTML = sql.length
-        ? `<p><strong><em>${sql[0].properties.lo_setor}</strong> Setor</em></p>
-        <p><strong><em>${sql[0].properties.lo_quadra}</strong> Quadra</em></p>
-        <p><strong><em>${sql[0].properties.lo_lote}</strong> Lote</em></p>
-        <p><strong><em>${sql[0].properties.lo_condomi}</strong> Condominio</em></p>
-        <p><strong><em>${sql[0].properties.area}</strong> Area m²</em></p>`
-
-        
-        : `<p>Clique em um lote!</p>`; 
-
+    document.querySelector('#setor').querySelector('p').textContent = sql[0].properties.lo_setor;
+    document.querySelector('#quadra').querySelector('p').textContent = sql[0].properties.lo_quadra;
+    document.querySelector('#lote').querySelector('p').textContent = sql[0].properties.lo_lote;
+    document.querySelector('#condominio').querySelector('p').textContent = sql[0].properties.lo_condomi;
+    document.querySelector('#area').querySelector('p').textContent = sql[0].properties.area;
+    
 
     //  ---------- MACROAREAS ----------
     document.getElementById('macroarea').innerHTML = macroareas.length
