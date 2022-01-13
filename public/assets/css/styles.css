@@ -6,11 +6,13 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #e0dede;
+  background-color: rgba(83, 88, 88, 0.589);;
+  
 }
 ::-webkit-scrollbar {
   width: 15px;
-  background: #575555;
+  background: #ffffff;
+  opacity: 0.1;
 }
 ::-webkit-scrollbar-thumb {
   background: #FFF500;
@@ -66,7 +68,7 @@ p {
 #saida {
   position: absolute;
   right: 0;
-  margin-top: 2.5%;
+  margin-top: 2.9%;
   background: #3A4848;
   color: rgb(255, 255, 255);
   font-family: 'Roboto', sans-serif;

@@ -102,6 +102,7 @@ map.addLayer({
         ? `<p><strong><em>${sql[0].properties.lo_setor}</strong> Setor</em></p>
         <p><strong><em>${sql[0].properties.lo_quadra}</strong> Quadra</em></p>
         <p><strong><em>${sql[0].properties.lo_lote}</strong> Lote</em></p>
+        <p><strong><em>${sql[0].properties.lo_condomi}</strong> Condominio</em></p>
         <p><strong><em>${sql[0].properties.area}</strong> Area m²</em></p>`
 
         
