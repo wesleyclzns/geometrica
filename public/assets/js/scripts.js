@@ -103,8 +103,13 @@ map.on('load', () => {
         document.querySelector('#macrozona').querySelector('[data-sigla]').textContent = macrozona[0].properties.sg_macro_d; */
 
         //  ---------- MACROAREA ----------
-        document.querySelector('#macroarea').querySelector('[data-nome]').textContent = macroareas[0].properties.mc_nome;
-        document.querySelector('#macroarea').querySelector('[data-sigla]').textContent = macroareas[0].properties.mc_sigla;
+        /* document.querySelector('#macroarea').querySelector('[data-nome]').textContent = macroareas[0].properties.mc_nome;
+        document.querySelector('#macroarea').querySelector('[data-sigla]').textContent = macroareas[0].properties.mc_sigla; */
+
+        //  ---------- OPERAÇÃO URBANA ----------
+         document.querySelector('#ouc').querySelector('[data-lei]').textContent = ouc[0].properties.ou_lei;
+         document.querySelector('#ouc').querySelector('[data-nome]').textContent = ouc[0].properties.ou_nome;
+         document.querySelector('#ouc').querySelector('[data-sigla]').textContent = ouc[0].properties.ou_sigla;
 
         //  ---------- MELHORAMENTO VIARIO ----------
     });
