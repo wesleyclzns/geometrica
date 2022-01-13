@@ -99,10 +99,12 @@ map.on('load', () => {
         /* document.querySelector('#zoneamento').querySelector('p').textContent = zoneamento[0].properties.ZONA; */
 
         //  ---------- MACROZONA ----------
-        document.querySelector('#macrozona').querySelector('[data-nome]').textContent = macrozona[0].properties.nm_perimet;
-        document.querySelector('#macrozona').querySelector('[data-sigla]').textContent = macrozona[0].properties.sg_macro_d;
+        /* document.querySelector('#macrozona').querySelector('[data-nome]').textContent = macrozona[0].properties.nm_perimet;
+        document.querySelector('#macrozona').querySelector('[data-sigla]').textContent = macrozona[0].properties.sg_macro_d; */
 
-
+        //  ---------- MACROAREA ----------
+        document.querySelector('#macroarea').querySelector('[data-nome]').textContent = macroareas[0].properties.mc_nome;
+        document.querySelector('#macroarea').querySelector('[data-sigla]').textContent = macroareas[0].properties.mc_sigla;
 
         //  ---------- MELHORAMENTO VIARIO ----------
     });
