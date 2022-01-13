@@ -113,9 +113,14 @@ map.on('load', () => {
 
 
          //  ---------- Setores da Macroárea (MEM) ----------
-         document.querySelector('#metropole').querySelector('p').textContent = metropole[0].properties.nm_perimet;
+         /* document.querySelector('#metropole').querySelector('p').textContent = metropole[0].properties.nm_perimet; */
 
         //  ---------- MELHORAMENTO VIARIO ----------
+        document.querySelector('#melhoramento').querySelector('[data-tipo]').textContent = melhoramento[0].properties.dp_tipo;
+        document.querySelector('#melhoramento').querySelector('[data-planta]').textContent = melhoramento[0].properties.dp_planta;
+        document.querySelector('#melhoramento').querySelector('[data-decreto]').textContent = melhoramento[0].properties.dp_decreto;
+        document.querySelector('#melhoramento').querySelector('a').href = melhoramento[0].properties.dp_link;
+        
     });
 
 
