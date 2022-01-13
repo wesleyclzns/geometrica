@@ -107,9 +107,13 @@ map.on('load', () => {
         document.querySelector('#macroarea').querySelector('[data-sigla]').textContent = macroareas[0].properties.mc_sigla; */
 
         //  ---------- OPERAÇÃO URBANA ----------
-         document.querySelector('#ouc').querySelector('[data-lei]').textContent = ouc[0].properties.ou_lei;
+         /* document.querySelector('#ouc').querySelector('[data-lei]').textContent = ouc[0].properties.ou_lei;
          document.querySelector('#ouc').querySelector('[data-nome]').textContent = ouc[0].properties.ou_nome;
-         document.querySelector('#ouc').querySelector('[data-sigla]').textContent = ouc[0].properties.ou_sigla;
+         document.querySelector('#ouc').querySelector('[data-sigla]').textContent = ouc[0].properties.ou_sigla; */
+
+
+         //  ---------- Setores da Macroárea (MEM) ----------
+         document.querySelector('#metropole').querySelector('p').textContent = metropole[0].properties.nm_perimet;
 
         //  ---------- MELHORAMENTO VIARIO ----------
     });
