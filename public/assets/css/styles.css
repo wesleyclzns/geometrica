@@ -131,14 +131,22 @@ p {
 
 }
 
-  
-#box-sql {
-  border: 2px red solid;
-  top: 0;
-  height: 150px;
-  margin-top: 20px;
-  width: 250px;
+.logradouros{
+  border-radius: 6px;
+  margin: 18px;
+  background-color: #FFFFFF;
+  color: #3A4848;
+  border: #FF0099 solid 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+#sql-logradouro{
+  border: #0edb1f solid 1px;
+}
+
+/* ________OBSOLETO_________ */
   
 .box-legislacao {
   top: 200px;
