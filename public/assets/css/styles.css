@@ -1,8 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #FF0099;
-  /* overflow: hidden; */
+  background-color: #3A4848;
+/*   overflow: hidden; */
 }
 
 ::-webkit-scrollbar-track {
@@ -66,6 +66,11 @@ a{
   top: 10px;
 } */
 
+.menu{
+  background-color: #FF0099;
+  padding: 13px;
+}
+
 .mapboxgl-ctrl-geocoder {
   min-width: 100%;
 }
@@ -75,10 +80,10 @@ a{
 * on the page */
 #map {
   position: absolute;
-  top: 0;
+  top: 22px;
   bottom: 0;
   width: 80%;
-  height: 90%;
+  height: 87.8%;
   margin-top: 2.3%;
   align-self: center;
 }
@@ -203,4 +208,38 @@ a{
   font-size: 24px;
   line-height: 28px;
   text-align: center;
+  border-color: #e0d903;
+  margin: 0 5%;
+}
+
+.enviar button:hover{
+  background-color: #e0d903;
+  height: 5vh;
+  width: 100%;
+  color: #3A4848;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  border-color: #FFF500;
+  margin: 0 5%;
+}
+
+.enviar button:active{
+  background-color: #fff70000;
+  color: #FFFFFF;
+  border: #FF0099 solid 2px;
+  font-weight: 400;
+}
+
+.rodape{
+  position: absolute;
+  background-color: #FF0099;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  bottom: 0;
+  margin-top: 25px;
 }
