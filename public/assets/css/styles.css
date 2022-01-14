@@ -57,18 +57,32 @@ a{
   width: 85vw;
 }
 
-/* .geocoder {
-  position: absolute;
-  z-index: 1;
-  width: 50%;
-  left: 50%;
-  margin-left: -25%;
-  top: 10px;
-} */
 
 .menu{
   background-color: #FF0099;
   padding: 13px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+
+}
+
+
+nav ul{
+  position: absolute;
+  color: #e0d903;
+  border-color: #ffffff solid 2px;
+  display: flex;
+  list-style: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+
+}
+
+nav li{
+  padding-left: 15px;
 }
 
 .mapboxgl-ctrl-geocoder {
