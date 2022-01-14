@@ -4,7 +4,7 @@ map.on('load', () => {
     //inicio---------- ADICIONA OS TILESETS DO MAPBOX STUDIO ----------
     // inicio---- ADICIONA O LAYER DOS LOGRADOUROS ---------
     map.addLayer({
-        id: 'logradouro',
+        id: 'logradouros',
         type: 'line',
         source: {
         type: 'vector',
@@ -70,8 +70,8 @@ map.on('load', () => {
             layers: ['ouc']
         });
 
-        const logradouro = map.queryRenderedFeatures(event.point, {
-            layers: ['logradouro']
+        const logradouros = map.queryRenderedFeatures(event.point, {
+            layers: ['logradouros']
         });
 
         //  fim---------- CRIA VARIAVEIS PARA MANIPULAR O HTML ----------
@@ -85,9 +85,9 @@ map.on('load', () => {
         document.querySelector('#area').querySelector('p').textContent = sql[0].properties.area;
 
         //  ---------- LOGRADOURO ----------
-        /* document.querySelector('#cadlog').querySelector('p').textContent = logradouro[0].properties.lg_codlog;
+       /*  document.querySelector('#cadlog').querySelector('p').textContent = logradouros[0].properties.lg_codlog;
         
-        document.querySelector('#logradouro').querySelector('p').textContent = logradouro[0].properties.lg_tipo + ' ' + logradouro[0].properties.lg_titulo + ' ' + logradouro[0].properties.lg_prep + ' ' + logradouro[0].properties.lg_nome; */
+        document.querySelector('#logradouro').querySelector('p').textContent = logradouros[0].properties.lg_tipo + ' ' + logradouros[0].properties.lg_titulo + ' ' + logradouros[0].properties.lg_prep + ' ' + logradouros[0].properties.lg_nome; */
 
         //  ---------- LIMITES ADMINISTRATIVOS ----------
         document.querySelector('#municipio').querySelector('p').textContent = limites[0].properties.municipio;
