@@ -85,9 +85,9 @@ map.on('load', () => {
         document.querySelector('#area').querySelector('p').textContent = sql[0].properties.area;
 
         //  ---------- LOGRADOURO ----------
-        document.querySelector('#cadlog').querySelector('p').textContent = logradouro[0].properties.lg_codlog;
+        /* document.querySelector('#cadlog').querySelector('p').textContent = logradouro[0].properties.lg_codlog;
         
-        document.querySelector('#logradouro').querySelector('p').textContent = logradouro[0].properties.lg_tipo + ' ' + logradouro[0].properties.lg_titulo + ' ' + logradouro[0].properties.lg_prep + ' ' + logradouro[0].properties.lg_nome;
+        document.querySelector('#logradouro').querySelector('p').textContent = logradouro[0].properties.lg_tipo + ' ' + logradouro[0].properties.lg_titulo + ' ' + logradouro[0].properties.lg_prep + ' ' + logradouro[0].properties.lg_nome; */
 
         //  ---------- LIMITES ADMINISTRATIVOS ----------
         document.querySelector('#municipio').querySelector('p').textContent = limites[0].properties.municipio;
@@ -107,19 +107,19 @@ map.on('load', () => {
         document.querySelector('#macroarea').querySelector('[data-sigla]').textContent = macroareas[0].properties.mc_sigla;
 
         //  ---------- OPERAÇÃO URBANA ----------
-         document.querySelector('#ouc').querySelector('[data-lei]').textContent = ouc[0].properties.ou_lei;
+         /* document.querySelector('#ouc').querySelector('[data-lei]').textContent = ouc[0].properties.ou_lei;
          document.querySelector('#ouc').querySelector('[data-nome]').textContent = ouc[0].properties.ou_nome;
-         document.querySelector('#ouc').querySelector('[data-sigla]').textContent = ouc[0].properties.ou_sigla;
+         document.querySelector('#ouc').querySelector('[data-sigla]').textContent = ouc[0].properties.ou_sigla; */
 
 
          //  ---------- Setores da Macroárea (MEM) ----------
-         document.querySelector('#metropole').querySelector('p').textContent = metropole[0].properties.nm_perimet;
+         /* document.querySelector('#metropole').querySelector('p').textContent = metropole[0].properties.nm_perimet; */
 
         //  ---------- MELHORAMENTO VIARIO ----------
-        document.querySelector('#melhoramento').querySelector('[data-tipo]').textContent = melhoramento[0].properties.dp_tipo;
+        /* document.querySelector('#melhoramento').querySelector('[data-tipo]').textContent = melhoramento[0].properties.dp_tipo;
         document.querySelector('#melhoramento').querySelector('[data-planta]').textContent = melhoramento[0].properties.dp_planta;
         document.querySelector('#melhoramento').querySelector('[data-decreto]').textContent = melhoramento[0].properties.dp_decreto;
-        document.querySelector('#melhoramento').querySelector('a').href = melhoramento[0].properties.dp_link;
+        document.querySelector('#melhoramento').querySelector('a').href = melhoramento[0].properties.dp_link; */
         
     });
 
