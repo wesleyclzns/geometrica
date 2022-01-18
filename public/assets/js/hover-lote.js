@@ -1,12 +1,19 @@
-
+// https://docs.mapbox.com/mapbox-gl-js/example/hover-styles/ - EXEMPLO
 let hoveredStateId = null;
  
 map.on('load', () => {
 map.addSource('states', {
-'type': 'geojson',
-'data': 'https://docs.mapbox.com/mapbox-gl-js/assets/us_states.geojson'
-});
- 
+    'type': 'geojson',
+    'data': './assets/geojsons/pqDomP.geojson'
+    // https://docs.mapbox.com/mapbox-gl-js/assets/us_states.geojson
+    });
+
+/* map.addSource('states', {
+    'type': 'vector',
+    'url': 'mapbox/geometrica.d189p3xk'
+    });
+ */
+
 // The feature-state dependent fill-opacity expression will render the hover effect
 // when a feature's hover state is set to true.
 map.addLayer({
@@ -39,7 +46,7 @@ map.addLayer({
 // When the user moves their mouse over the state-fill layer, we'll update the
 // feature state for the feature under the mouse.
 map.on('mousemove', 'state-fills', (e) => {
-if (e.features.length > 0) {
+if (e.features.length) {
 if (hoveredStateId !== null) {
 map.setFeatureState(
 { source: 'states', id: hoveredStateId },
