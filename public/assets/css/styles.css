@@ -55,8 +55,12 @@ a{
   padding: 13px;
   color: #ffffff;
   display: flex;
-  justify-content: center;
+
   color: #e2cd0f;
+}
+
+.logo{
+  justify-self: flex-start;
 }
 
 
