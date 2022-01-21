@@ -1,7 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #3A4848;
+  background-color: #fff;
+  font-family: Roboto;
 /*   overflow: hidden; */
 }
 
@@ -17,15 +18,15 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #FFF500;
 }
-  
+
+
 h2, h3 {
   margin: 10px;
   font-size: 20px;
 }
   
 h3 {
-  font-family: Roboto;
-  font-style: normal;
+    font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 21px;
@@ -33,7 +34,6 @@ h3 {
   
 p {
   margin: 14px;
-  font-family: Roboto;
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
@@ -42,7 +42,6 @@ p {
 
 a{
   text-decoration: none;
-  font-family: Roboto;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -50,16 +49,9 @@ a{
   color: #FF0099;
 }
 
-.app{
-  display: flex;
-  align-items: flex-start;
-  height: 85vh;
-  width: 85vw;
-}
-
 
 .menu{
-  background-color: #FF0099;
+  background-color: #3A4848;
   padding: 13px;
   color: #ffffff;
   display: flex;
@@ -74,7 +66,6 @@ nav ul{
   border-color: #ffffff solid 2px;
   display: flex;
   list-style: none;
-  font-family: Roboto;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -85,141 +76,10 @@ nav li{
   padding-left: 15px;
 }
 
-.mapboxgl-ctrl-geocoder {
-  min-width: 100%;
-}
-
-/**
-* Create a position for the map
-* on the page */
-#map {
-  position: absolute;
-  top: 22px;
-  bottom: 0;
-  width: 80%;
-  height: 87.8%;
-  margin-top: 2.3%;
-  align-self: center;
-}
-
-#saida {
-  position: absolute;
-  right: 0;
-  margin-top: 2.9%;
-  background: #3A4848;
-  color: rgb(255, 255, 255);
-  font-family: 'Roboto', sans-serif;
-  overflow: auto;
-  width: 20%;
-  height: 90%;
-  align-self: center;
-  
-}
-
-#entrada {
-  position: absolute;
-  background: rgba(58, 72, 72, 0.822);
-  color: rgb(255, 255, 255);
-  font-family: 'Roboto', sans-serif;
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
-  width: 20%;
-  height: 50%;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
-  
-}
-
-.sql-area{
-  /* border: gold 2px solid; */
-  border-radius: 6px;
-  margin: 18px;
-  background-color: #FFFFFF;
-  color: #3A4848;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.sql{
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-}
-
-#area{
-  display: flex;
-  align-items: baseline;
-}
-
-.logradouros{
-  border-radius: 6px;
-  margin: 18px;
-  background-color: #FFFFFF;
-  color: #3A4848;
-  /* border: #FF0099 solid 2px; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* #sql-logradouro{
-  border: #0edb1f solid 1px;
-} */
-
-#limites-administrativos{
-  border-radius: 6px;
-  margin: 18px;
-  background-color: #ffffff;
-  color: #3A4848;
-  /* border: solid 2px rgb(81, 255, 28); */
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.em-linha{
-  display: flex;
-  align-items: baseline;
-  
-}
-
-
-#legislacao{
-  border-radius: 6px;
-  margin: 18px;
-  background-color: #FFFFFF;
-  color: #3A4848;
-  /* border: #FF0099 solid 2px; */
-
-}
-
-#outros{
-  border-radius: 6px;
-  margin: 18px;
-  background-color: #FFFFFF;
-  color: #3A4848;
-  /* border: solid 2px rgb(19, 119, 250); */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.enviar{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.enviar button{
+button{
   background-color: #FFF500;
   height: 5vh;
-  width: 100%;
   color: #3A4848;
-  font-family: Roboto;
   font-weight: 500;
   font-size: 24px;
   line-height: 28px;
@@ -229,12 +89,12 @@ nav li{
   margin-bottom: 15%;
 }
 
-.enviar button:hover{
+button:hover{
   background-color: #e0d903;
   border-color: #FFF500;
 }
 
-.enviar button:active{
+button:active{
   background-color: #fff70000;
   color: #FFFFFF;
   border: #FF0099 solid 2px;
@@ -243,7 +103,7 @@ nav li{
 
 .rodape{
   position: absolute;
-  background-color: #FF0099;
+  background-color: #3A4848;
   color: #ffffff;
   display: flex;
   justify-content: center;
