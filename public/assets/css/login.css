@@ -59,7 +59,7 @@ text-align: center;
 color: #FFFFFF;
 }
 
-form button{
+.login button{
   margin-top: 2%;
   width: 335px;
 }

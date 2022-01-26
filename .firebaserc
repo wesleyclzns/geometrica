@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "metrica-31f16"
-  }
+    "default": "metrica-31f16",
+    "geometrica": "metrica-31f16"
+  },
+  "targets": {}
 }

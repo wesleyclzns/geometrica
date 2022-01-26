@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #3A4848;
+  /* background-color: #3A4848; */
 /*   overflow: hidden; */
 }
 
@@ -59,7 +59,7 @@ a{
 
 
 .menu{
-  background-color: #FF0099;
+  background-color: #3A4848;
   padding: 13px;
   color: #ffffff;
   display: flex;
@@ -96,7 +96,7 @@ nav li{
   position: absolute;
   top: 22px;
   bottom: 0;
-  width: 80%;
+  width: 75%;
   height: 87.8%;
   margin-top: 2.3%;
   align-self: center;
@@ -110,8 +110,8 @@ nav li{
   color: rgb(255, 255, 255);
   font-family: 'Roboto', sans-serif;
   overflow: auto;
-  width: 20%;
-  height: 90%;
+  width: 25%;
+  height: 91%;
   align-self: center;
   
 }
@@ -131,13 +131,22 @@ nav li{
   align-self: center;
   
 }
-
-.sql-area{
-  /* border: gold 2px solid; */
+.box{
   border-radius: 6px;
   margin: 18px;
   background-color: #FFFFFF;
   color: #3A4848;
+}
+
+#lote-selecionado{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.sql-area{
+  /* border: gold 2px solid; */
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -156,11 +165,7 @@ nav li{
 }
 
 .logradouros{
-  border-radius: 6px;
-  margin: 18px;
-  background-color: #FFFFFF;
-  color: #3A4848;
-  /* border: #FF0099 solid 2px; */
+   /* border: #FF0099 solid 2px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -171,10 +176,6 @@ nav li{
 } */
 
 #limites-administrativos{
-  border-radius: 6px;
-  margin: 18px;
-  background-color: #ffffff;
-  color: #3A4848;
   /* border: solid 2px rgb(81, 255, 28); */
   display: flex;
   align-items: center;
@@ -189,19 +190,13 @@ nav li{
 
 
 #legislacao{
-  border-radius: 6px;
-  margin: 18px;
-  background-color: #FFFFFF;
-  color: #3A4848;
+  
   /* border: #FF0099 solid 2px; */
 
 }
 
 #outros{
-  border-radius: 6px;
-  margin: 18px;
-  background-color: #FFFFFF;
-  color: #3A4848;
+
   /* border: solid 2px rgb(19, 119, 250); */
   display: flex;
   flex-direction: column;
@@ -237,13 +232,13 @@ nav li{
 .enviar button:active{
   background-color: #fff70000;
   color: #FFFFFF;
-  border: #FF0099 solid 2px;
+  border: #FFF500 solid 2px;
   font-weight: 400;
 }
 
 .rodape{
   position: absolute;
-  background-color: #FF0099;
+  background-color: #3A4848;
   color: #ffffff;
   display: flex;
   justify-content: center;

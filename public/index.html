@@ -21,19 +21,42 @@
     <script src="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.css" />
 
-    
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.4/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.4/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDGGXonSi7E3X2aCk-pEQjsYrzq4TsEkz8",
+          authDomain: "metrica-31f16.firebaseapp.com",
+          databaseURL: "https://metrica-31f16-default-rtdb.firebaseio.com",
+          projectId: "metrica-31f16",
+          storageBucket: "metrica-31f16.appspot.com",
+          messagingSenderId: "782036737669",
+          appId: "1:782036737669:web:d18239b61d5b972d6fd3ec",
+          measurementId: "G-SK9Y2YF6WQ"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
  
 </head>
 <body>
     <nav class="menu">
         <div class="logo"><a href="https://metrica-31f16.web.app/" rel="noopener noreferrer"><img src="./assets/img/logo.svg" class="media-object  img-responsive img-thumbnail"></a></div>
         <div>
-            <ul>
-                <!-- <li>Inicio</li>
+            <ul style="display: none;">
+                <li>Inicio</li>
                 <li>Geometrica</li>
                 <li>Metrica</li>
-                <li><a href="./assets/html/volumetrica.html">Volumetrica</a></li>
-                <li>login</li> -->
+                <li>Volumetrica</a></li>
+                <li>Perfil</li>
 
             </ul>
         </div>
@@ -41,14 +64,14 @@
 
     <section class="app">
         <div class="login">
+            
             <h1>Login</h1>
-        <form action="login" method="post">
             <!-- <label for="email">Email</label> -->
             <input type="email" name="email" id="email" placeholder="email">
             <!-- <label for="senha">Senha</label> -->
             <input type="password" name="senha" id="senha" placeholder="senha">
-            <button type="submit">Enviar</button>
-        </form>
+            <button type="submit" onclick="createUserWithEmailAndPassword(auth, email, password)
+            ()">Enviar</button>
         <div class="esqueci-solicitar">
             <a href="">Solicitar cadastro</a>
             <a href="">Esqueci minha senha</a>
@@ -62,10 +85,8 @@
     
 
     <!-- script do mapbox -->
-    <script defer src="./assets/js/mapbox-credenciais.js"></script>
-    <script defer src="./assets/js/mapbox-controles.js"></script>
-    <script defer src="./assets/js/scripts.js"></script>
-    <script defer src="./assets/js/hover-lote.js"></script>
+    <script defer src="./assets/js/firebase/app.js"></script>
+    <script defer src="./assets/js/firebase/firebase-config.js"></script>
    <!--  <script defer src="./assets/js/click-lotes.js"></script> -->
    
 </body>

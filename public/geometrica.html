@@ -13,7 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700;900&display=swap" rel="stylesheet">
 
     <!-- CSS -->
+    
     <link rel="stylesheet" href="./assets/css/geometrica.css">
+    
 
     <!-- Login -->
     <script src="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.js"></script>
@@ -54,37 +56,50 @@
         </aside>
 
         <aside id="saida">
+            <div>
+                <p>Informações dos lotes selecionados</p>
+                <p>dados baseados no geosampa </p>
+            </div>
             <div id="sql-logradouro">
                 <!-- Setor Quadra Lote -->
-                <div class="sql-area">
-                    <div class="sql">
-                        <div id="setor">
-                            <h3>Setor</h3>
-                            <p>****</p>
-                        </div>
-                        <div id="quadra">
-                            <h3>Quadra</h3>
-                            <p>****</p>
-                        </div>
-                        <div id="lote">
-                            <h3>Lote</h3>
-                            <p>****</p>
-                        </div>
-                        <div id="condominio">
-                            <h3>Condominio</h3>
-                            <p>****</p>
-                        </div>
+                <div id="lote-selecionado" class="box">
+                    <div id="num-selecao-lote">
+                        <strong>1</strong>
                     </div>
-                    <div id="area">
-                        <h3>Área</h3>
-                        <p>********</p>
-                        <p>m²</p>
+                    <div class="sql-area">
+                        <div class="sql">
+                            <div id="setor">
+                                <h3>Setor</h3>
+                                <p>****</p>
+                            </div>
+                            <div id="quadra">
+                                <h3>Quadra</h3>
+                                <p>****</p>
+                            </div>
+                            <div id="lote">
+                                <h3>Lote</h3>
+                                <p>****</p>
+                            </div>
+                            <div id="condominio">
+                                <h3>Condominio</h3>
+                                <p>****</p>
+                            </div>
+                        </div>
+                        <div id="area">
+                            <h3>Área</h3>
+                            <p>********</p>
+                            <p>m²</p>
+                        </div>
+                        
+                        <!-- <div id='sql'><p>clique em um lote!</p></div> -->
                     </div>
-                    <!-- <div id='sql'><p>clique em um lote!</p></div> -->
+                    <div id="descelecionar">
+                        <strong>X</strong>
+                    </div>
                 </div>
                 
                 <!-- Logradouro -->
-                <div class='logradouros'>
+                <div class='logradouros box'>
                     <div id="logradouro">
                         <p>********</p>
                     </div>
@@ -98,7 +113,7 @@
                     
 
             <!-- Limites administrativos -->
-            <div id="limites-administrativos">
+            <div id="limites-administrativos" class="box">
                 <h3>Limitess Administrativos</h3>
                 <div>
                     <div id="municipio" class="em-linha">
@@ -118,7 +133,7 @@
             </div>
             
 
-            <div id="legislacao">
+            <div id="legislacao" class="box">
                 <!-- Zoneamento -->
                 <div id="zoneamento" class="em-linha">
                     <h3>Zoneamento</h3>
@@ -161,7 +176,7 @@
                     <div id='metropole'><p></p></div> -->
             </div>
 
-            <div id="outros">
+            <div id="outros" class="box">
                 <!-- Melhoramento Viario -->
                 <div id="melhoramento">
                     <h3>Melhoramento Viario</h3>
