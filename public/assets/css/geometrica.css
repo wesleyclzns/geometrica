@@ -18,26 +18,32 @@ body {
   background: #FFF500;
 }
   
-h2, h3 {
-  margin: 10px;
+h2 {
+  margin: 15px;
   font-size: 20px;
+  padding: 8px;
 }
   
 h3 {
   font-family: Roboto;
   font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 21px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 13px;
+  letter-spacing: 0em;
+  margin: 15px;
 }
   
 p {
-  margin: 14px;
   font-family: Roboto;
   font-style: normal;
+  text-align: left;
   font-weight: 300;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 16px;
+  line-height: 13px;
+  letter-spacing: 0em;
+  margin: 15px;
 }
 
 a{
@@ -89,9 +95,24 @@ nav li{
   min-width: 100%;
 }
 
-/**
-* Create a position for the map
-* on the page */
+.box{
+  border-radius: 6px;
+  margin: 18px;
+  background-color: #FFFFFF;
+  color: #3A4848;
+}
+
+.box-lote{
+  border: #e0d903 1px solid;
+  margin: 2%;
+}
+
+.em-linha{
+  display: flex;
+  align-items: baseline;
+  
+}
+
 #map {
   position: absolute;
   top: 22px;
@@ -100,20 +121,6 @@ nav li{
   height: 87.8%;
   margin-top: 2.3%;
   align-self: center;
-}
-
-#saida {
-  position: absolute;
-  right: 0;
-  margin-top: 2.9%;
-  background: #3A4848;
-  color: rgb(255, 255, 255);
-  font-family: 'Roboto', sans-serif;
-  overflow: auto;
-  width: 25%;
-  height: 91%;
-  align-self: center;
-  
 }
 
 #entrada {
@@ -129,14 +136,21 @@ nav li{
   justify-content: center;
   align-items: center;
   align-self: center;
-  
 }
-.box{
-  border-radius: 6px;
-  margin: 18px;
-  background-color: #FFFFFF;
-  color: #3A4848;
+
+#saida {
+  position: absolute;
+  right: 0;
+  margin-top: 2.9%;
+  background: #3A4848;
+  color: rgb(255, 255, 255);
+  font-family: 'Roboto', sans-serif;
+  overflow: auto;
+  width: 25%;
+  height: 91%;
+  align-self: center;
 }
+
 
 #lote-selecionado{
   display: flex;
@@ -164,16 +178,8 @@ nav li{
   align-items: baseline;
 }
 
-.logradouros{
-   /* border: #FF0099 solid 2px; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-/* #sql-logradouro{
-  border: #0edb1f solid 1px;
-} */
+
 
 #limites-administrativos{
   /* border: solid 2px rgb(81, 255, 28); */
@@ -181,13 +187,6 @@ nav li{
   align-items: center;
   flex-direction: column;
 }
-
-.em-linha{
-  display: flex;
-  align-items: baseline;
-  
-}
-
 
 #legislacao{
   

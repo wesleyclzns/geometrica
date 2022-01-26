@@ -78,10 +78,10 @@ map.on('load', () => {
 
         //  inicio---------- MANIPULA O HTML ----------
         //  ---------- SETOR, QUADRA, LOTE (sql) ----------
-        document.querySelector('#setor').querySelector('p').textContent = sql[0].properties.lo_setor;
-        document.querySelector('#quadra').querySelector('p').textContent = sql[0].properties.lo_quadra;
-        document.querySelector('#lote').querySelector('p').textContent = sql[0].properties.lo_lote;
-        document.querySelector('#condominio').querySelector('p').textContent = sql[0].properties.lo_condomi;
+        document.querySelector('#num_setor').querySelector('p').textContent = sql[0].properties.lo_setor;
+        document.querySelector('#num_quadra').querySelector('p').textContent = sql[0].properties.lo_quadra;
+        document.querySelector('#num_lote').querySelector('p').textContent = sql[0].properties.lo_lote;
+        document.querySelector('#num_condominio').querySelector('p').textContent = sql[0].properties.lo_condomi;
         document.querySelector('#area').querySelector('p').textContent = sql[0].properties.area;
 
         //  ---------- LOGRADOURO ----------
